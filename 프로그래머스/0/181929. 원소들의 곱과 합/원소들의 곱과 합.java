@@ -9,7 +9,7 @@ class Solution {
             mul *= num;
         }
         
-        answer = sum * sum > mul ? 1 : 0;
+        answer = Math.pow(sum, 2) > mul ? 1 : 0;
         
         return answer;
     }
