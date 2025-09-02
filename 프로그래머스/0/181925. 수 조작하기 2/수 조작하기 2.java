@@ -1,10 +1,9 @@
 class Solution {
     public String solution(int[] numLog) {
         String answer = "";
-        int num = numLog[0];
         
         for(int i = 1; i < numLog.length; i++) {
-            int diff = numLog[i] - num;    
+            int diff = numLog[i] - numLog[i-1];    
             
             switch(diff){
                     case 1 -> answer += "w";
@@ -12,9 +11,7 @@ class Solution {
                     case 10 -> answer += "d";
                     case -10 -> answer += "a";
             }
-            num = numLog[i];
         }
-        
         
         return answer;
     }
