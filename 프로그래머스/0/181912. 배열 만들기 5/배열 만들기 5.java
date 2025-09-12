@@ -5,18 +5,13 @@ class Solution {
         List<Integer> list = new ArrayList<>();
         
         for(String numStr : intStrs) {
-            String num = numStr.substring(s, s + l);
-            int value = Integer.parseInt(num);
+            int value = Integer.parseInt(numStr.substring(s, s + l));
             
             if(value > k) { 
                 list.add(value);
             }
         }
         
-        int[] answer = new int[list.size()];
-        for(int i = 0; i < list.size(); i++){
-            answer[i] = list.get(i);
-        }
-        return answer;
+        return list.stream().mapToInt(i -> i).toArray();
     }
 }
