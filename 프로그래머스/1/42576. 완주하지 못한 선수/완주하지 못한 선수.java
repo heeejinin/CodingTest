@@ -1,22 +1,17 @@
-import java.util.*;
+import java.util.HashMap;
 
 class Solution {
     public String solution(String[] participant, String[] completion) {
-        HashMap<String, Integer> map = new HashMap<>();
-        
-        for (String name : participant) {
-            map.put(name, map.getOrDefault(name, 0) + 1);
-        }
-        
-        for (String name : completion) {
-            map.put(name, map.get(name) - 1);
-        }
-        
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            if(entry.getValue() != 0) {
-                return entry.getKey();
+        String answer = "";
+        HashMap<String, Integer> hm = new HashMap<>();
+        for (String player : participant) hm.put(player, hm.getOrDefault(player, 0) + 1);
+        for (String player : completion) hm.put(player, hm.get(player) - 1);
+
+        for (String key : hm.keySet()) {
+            if (hm.get(key) != 0){
+                answer = key;
             }
         }
-        return ""; // 문제 설명 상 반환되지 않음
+        return answer;
     }
 }
