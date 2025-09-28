@@ -1,0 +1,20 @@
+import java.util.*;
+
+class Solution {
+    public int solution(String[][] clothes) {
+        Map<String, Integer> map = new HashMap<>();
+        
+        for(String[] cloth : clothes) {
+            String type = cloth[1];
+            map.put(type, map.getOrDefault(type, 0) + 1);
+        }
+        
+        int combination = 1;
+        
+        for(int count : map.values()) {
+            combination *= (count + 1);
+        }
+        
+        return combination - 1;
+    }
+}
