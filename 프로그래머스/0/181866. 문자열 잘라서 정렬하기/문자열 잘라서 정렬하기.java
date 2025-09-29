@@ -3,11 +3,11 @@ import java.util.*;
 class Solution {
     public String[] solution(String myString) {
         
-        String[] split = myString.split("x");
+        String[] splits = myString.split("x");
         
         List<String> strings = new ArrayList<>();
         
-        for (String s : split) {
+        for (String s : splits) {
             if (!s.isEmpty()) {
                 strings.add(s);
             }
